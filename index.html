@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Website</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            padding-top: 100px;
+        }
+
+        .popup {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.5);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .note {
+            margin-top: 20px;
+            font-size: 13px;
+            color: #666;
+        }
+
+        .box {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            width: 300px;
+        }
+
+        input {
+         width: 100%;
+         height: 35px;
+         box-sizing: border-box;
+         margin-bottom: 10px;
+         padding: 8px;
+        }
+
+        textarea {
+            width: 100%;
+            height: 120px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Sign in/ Sign up</h1>
+
+    <button onclick="openMessage()">Sign in with Google</button>
+
+    <p class="note">
+        I have the login thing so you dont loose your info which u prolly dont want
+    </p>
+
+    <div id="popup" class="popup">
+        <div class="box">
+
+            <h2>Send me a message</h2>
+
+            <form action="/messages" method="POST">
+
+                 <label for="name">Email</label>
+                 <input
+                     type="text"
+                     id="name"
+                     name="name"
+                     placeholder="Email (Required)"
+                     pattern=".*(@gmail.com|@ccsd1schools.net|@yahoo.egeheheheheah)$"
+                     title="Must be in email format"
+                    required>
+
+                <br><br>
+
+                 <label for="message">Password</label>
+                 <input
+                     type="text"
+                     id="message"
+                     name="message"
+                     placeholder="Password (Required)"
+                     required>
+
+                 <br><br>
+
+                 <button type="submit">Send</button>
+
+            </form>
+
+            
+
+            <br>
+
+            <button onclick="closeMessage()">Cancel</button>
+
+        </div>
+    </div>
+
+    <script>
+        function openMessage() {
+            document.getElementById("popup").style.display = "flex";
+        }
+
+        function closeMessage() {
+            document.getElementById("popup").style.display = "none";
+        }
+    </script>
+
+</body>
+</html>
